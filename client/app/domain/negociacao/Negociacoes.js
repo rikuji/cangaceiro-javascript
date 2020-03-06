@@ -1,6 +1,7 @@
 class Negociacoes {
   constructor() {
     this._negociacoes = [];
+    Object.freeze(this);
   }
 
   adiciona(negociacoes) {
@@ -16,5 +17,9 @@ class Negociacoes {
       (total, negociacao) => total + negociacao.volume,
       0
     );
+  }
+
+  esvazia() {
+    this._negociacoes.length = 0;
   }
 }
